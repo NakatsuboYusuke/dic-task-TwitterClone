@@ -12,6 +12,10 @@ end
 
 module App
   class Application < Rails::Application
-    config.generators.template_engine = :slim # change erb to slim
+    # change erb to slim
+    config.generators.template_engine = :slim
+    # set time_zone
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
