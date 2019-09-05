@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class MutterControllerTest < ActionDispatch::IntegrationTest
+class MuttersControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get mutter_index_url
+    get mutters_index_url
     assert_response :success
   end
 

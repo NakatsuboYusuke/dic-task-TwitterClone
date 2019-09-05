@@ -1,0 +1,14 @@
+section.sec
+  .inner
+    .tit
+      h2 新規投稿
+    .content
+      = form_with model: @mutter, local: true do |form|
+        - if @mutter.errors.any?
+          .error_content
+            ul
+              - @mutter.errors.full_messages.each do |message|
+                li = message
+        .create_content
+          p = form.text_area :content
+          p = form.submit "ツイート"
