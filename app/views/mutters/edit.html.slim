@@ -1,7 +1,8 @@
 section.sec
   .inner
     .tit
-      h2 投稿を編集する
+      h2
+        span 投稿を編集する
     .content
       = form_with model: @mutter, local: true do |form|
         - if @mutter.errors.any?

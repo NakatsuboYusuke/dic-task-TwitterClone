@@ -1,12 +1,15 @@
+.flash
+  p = flash[:update]
 section.sec
   .inner
     .tit
-      h2 投稿詳細
+      h2
+        span 投稿詳細
     .content
       .post
         p = @mutter.content
         p #{convert_create_time(@mutter.created_at)}・#{link_to "MutterApp", mutters_path}
       .func
         ul
-          li = link_to "編集", edit_mutter_path(@mutter.id)
-          li = link_to "削除", mutter_path(@mutter.id), method: :delete
+          li = link_to "編集", edit_mutter_path(@mutter.id), data: {confirm: "投稿を編集しますか？"}
+          li = link_to "削除", mutter_path(@mutter.id), data: {confirm: "投稿を削除しますか？"}, method: :delete

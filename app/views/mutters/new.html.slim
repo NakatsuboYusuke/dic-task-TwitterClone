@@ -3,7 +3,7 @@ section.sec
     .tit
       h2 新規投稿
     .content
-      = form_with model: @mutter, local: true do |form|
+      = form_with model: @mutter, url: confirm_mutters_path, local: true do |form|
         - if @mutter.errors.any?
           .error_content
             ul

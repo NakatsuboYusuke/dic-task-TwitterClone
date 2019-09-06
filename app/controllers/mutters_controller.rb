@@ -15,7 +15,7 @@ class MuttersController < ApplicationController
   def create
     @mutter = Mutter.new(mutter_params)
     if @mutter.save
-      #flash[:success] = "投稿が完了しました"
+      flash[:success] = "投稿が完了しました"
       redirect_to list_mutters_path
     else
       render :new
@@ -30,7 +30,7 @@ class MuttersController < ApplicationController
 
   def update
     if @mutter.update(mutter_params)
-      #flash[:update] = "投稿を更新しました"
+      flash[:update] = "投稿を更新しました"
       redirect_to mutter_path
     else
       render :edit
@@ -39,8 +39,12 @@ class MuttersController < ApplicationController
 
   def destroy
     @mutter.destroy
-    # flash[:destroy] = "投稿を削除しました"
+    flash[:destroy] = "投稿を削除しました"
     redirect_to list_mutters_path
+  end
+
+  def confirm
+    @mutter = Mutter.new(mutter_params)
   end
 
   private
