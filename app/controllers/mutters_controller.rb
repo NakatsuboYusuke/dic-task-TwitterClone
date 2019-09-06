@@ -21,6 +21,10 @@ class MuttersController < ApplicationController
     end
   end
 
+  def show
+    @mutter = Mutter.find(params[:id])
+  end
+
   private
 
   def mutter_params

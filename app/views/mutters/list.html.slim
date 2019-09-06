@@ -3,7 +3,6 @@ section.sec
     .tit
       h2 投稿一覧
     .content
-      .post
-        - @mutters.each do |mutter|
+      - @mutters.each do |mutter|
+        = link_to mutter_path(mutter.id)
           p = mutter.content
-      .func
