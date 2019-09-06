@@ -7,4 +7,20 @@ class MuttersController < ApplicationController
     @mutter= Mutter.new
   end
 
+  def create
+    @mutter = Mutter.new(mutter_params)
+    if @mutter.save
+      #flash[:success] = "投稿が完了しました"
+      redirect_to mutters_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def mutter_params
+    params.require(:mutter).permit(:content)
+  end
+
 end
