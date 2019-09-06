@@ -1,0 +1,9 @@
+section.sec
+  .inner
+    .tit
+      h2 投稿一覧
+    .content
+      .post
+        - @mutters.each do |mutter|
+          p = mutter.content
+      .func

@@ -3,8 +3,12 @@ class MuttersController < ApplicationController
   def index
   end
 
+  def list
+    @mutters = Mutter.all
+  end
+
   def new
-    @mutter= Mutter.new
+    @mutter = Mutter.new
   end
 
   def create
