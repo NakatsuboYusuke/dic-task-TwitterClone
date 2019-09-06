@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      mutter:
+    attributes:
+      mutter:
+        content: 投稿

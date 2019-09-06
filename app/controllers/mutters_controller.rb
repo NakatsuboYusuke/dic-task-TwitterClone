@@ -14,11 +14,15 @@ class MuttersController < ApplicationController
 
   def create
     @mutter = Mutter.new(mutter_params)
-    if @mutter.save
-      flash[:success] = "投稿が完了しました"
-      redirect_to list_mutters_path
-    else
+    if params[:back]
       render :new
+    else
+      if @mutter.save
+        flash[:success] = "投稿が完了しました"
+        redirect_to list_mutters_path
+      else
+        render :new
+      end
     end
   end
 
@@ -45,6 +49,7 @@ class MuttersController < ApplicationController
 
   def confirm
     @mutter = Mutter.new(mutter_params)
+    render :new if @mutter.invalid?
   end
 
   private
