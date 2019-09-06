@@ -25,8 +25,6 @@ class MuttersController < ApplicationController
     @mutter = Mutter.find(params[:id])
   end
 
-  private
-
   def mutter_params
     params.require(:mutter).permit(:content)
   end

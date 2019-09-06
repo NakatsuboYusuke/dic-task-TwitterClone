@@ -13,8 +13,8 @@ html
         h1 = link_to "MutterApp", mutters_path
       nav.nav
         ul
-          li 新規投稿
-          li 投稿一覧
+          li = link_to "新規投稿", new_mutter_path
+          li = link_to "投稿一覧", list_mutters_path
 
     = yield
 
