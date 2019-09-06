@@ -9,4 +9,4 @@ section.sec
       .func
         ul
           li = link_to "編集", edit_mutter_path(@mutter.id)
-          /li = link_to "削除", mutter_path(mutter.id), method: :delete
+          li = link_to "削除", mutter_path(@mutter.id), method: :delete

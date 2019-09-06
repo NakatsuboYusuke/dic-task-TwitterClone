@@ -1,5 +1,5 @@
 class MuttersController < ApplicationController
-  before_action :set_mutter, only: [:show, :edit, :update]
+  before_action :set_mutter, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -16,7 +16,7 @@ class MuttersController < ApplicationController
     @mutter = Mutter.new(mutter_params)
     if @mutter.save
       #flash[:success] = "投稿が完了しました"
-      redirect_to mutters_path
+      redirect_to list_mutters_path
     else
       render :new
     end
@@ -35,6 +35,12 @@ class MuttersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @mutter.destroy
+    # flash[:destroy] = "投稿を削除しました"
+    redirect_to list_mutters_path
   end
 
   private
