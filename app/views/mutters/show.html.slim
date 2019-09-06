@@ -5,6 +5,8 @@ section.sec
     .content
       .post
         p = @mutter.content
-        p = convert_create_time(@mutter.created_at)
-        / 表示時刻を修正する
+        p #{convert_create_time(@mutter.created_at)}・#{link_to "MutterApp", mutters_path}
       .func
+        ul
+          li = link_to "編集", edit_mutter_path(@mutter.id)
+          /li = link_to "削除", mutter_path(mutter.id), method: :delete

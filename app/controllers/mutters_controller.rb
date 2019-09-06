@@ -1,4 +1,5 @@
 class MuttersController < ApplicationController
+  before_action :set_mutter, only: [:show, :edit]
 
   def index
   end
@@ -22,11 +23,21 @@ class MuttersController < ApplicationController
   end
 
   def show
-    @mutter = Mutter.find(params[:id])
+    #@mutter = Mutter.find(params[:id])
   end
+
+  def edit
+    #@mutter = Mutter.find(params[:id])
+  end
+
+  private
 
   def mutter_params
     params.require(:mutter).permit(:content)
+  end
+
+  def set_mutter
+    @mutter = Mutter.find(params[:id])
   end
 
 end
