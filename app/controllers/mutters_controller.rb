@@ -1,5 +1,5 @@
 class MuttersController < ApplicationController
-  before_action :set_mutter, only: [:show, :edit]
+  before_action :set_mutter, only: [:show, :edit, :update]
 
   def index
   end
@@ -23,11 +23,18 @@ class MuttersController < ApplicationController
   end
 
   def show
-    #@mutter = Mutter.find(params[:id])
   end
 
   def edit
-    #@mutter = Mutter.find(params[:id])
+  end
+
+  def update
+    if @mutter.update(mutter_params)
+      #flash[:update] = "投稿を更新しました"
+      redirect_to mutter_path
+    else
+      render :edit
+    end
   end
 
   private
