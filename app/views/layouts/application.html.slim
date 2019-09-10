@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     title
       | Mutterapp
     = csrf_meta_tags
@@ -8,16 +9,21 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    header.header
-      .log
-        h1 = link_to "MutterApp", mutters_path
-      nav.nav
-        ul
-          li = link_to "新規投稿", new_mutter_path
-          li = link_to "投稿一覧", list_mutters_path
+    #container
+      header.header
+        .inner
+          .log
+            h1 = link_to mutters_path do
+              = image_tag "logo.png"
+              span MutterApp
+          nav.nav
+            ul
+              li = link_to "新規投稿", new_mutter_path
+              li = link_to "投稿一覧", list_mutters_path
 
-    = yield
+      = yield
 
-    footer.footer
-      p
-        small ©️ 2019 MutterApp
+      footer.footer
+        .inner
+          p
+            small ©️ 2019 MutterApp

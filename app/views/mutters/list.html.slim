@@ -1,12 +1,17 @@
-.flash
-  p
-    = flash[:success]
-    = flash[:destroy]
-section.sec
+- if flash[:success]
+  .flash
+    p
+      = flash[:success]
+- if flash[:destroy]
+  .flash
+    p
+      = flash[:destroy]
+section.sec.list
   .inner
     .tit
       h2 投稿一覧
     .content
-      - @mutters.each do |mutter|
-        = link_to mutter_path(mutter.id)
-          p = mutter.content
+      .content_list
+        - @mutters.each do |mutter|
+          = link_to mutter_path(mutter.id)
+            p = mutter.content

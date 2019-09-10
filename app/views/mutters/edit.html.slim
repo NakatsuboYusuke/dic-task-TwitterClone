@@ -11,5 +11,5 @@ section.sec
               - @mutter.errors.full_messages.each do |message|
                 li = message
         .create_content
-          p = form.text_area :content, placeholder: "いまどうしてる？"
-          p = form.submit "マター"
+          = form.text_area :content, placeholder: "いまどうしてる？"
+          = form.submit "編集する", class: "submit"
