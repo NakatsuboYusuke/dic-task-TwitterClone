@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'slim-rails'
 gem 'html2slim'
+gem 'autoprefixer-rails'
 
 # Debug
 gem 'pry-rails'
